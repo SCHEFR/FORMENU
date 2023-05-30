@@ -1,7 +1,7 @@
 # FORMENU
 A wrapper/utility to aid with the creation of [GameGuardian](https://gameguardian.net/)'s selection dialog (menus)
 # FEATURES
-See the **USAGE** section below for examples of each feature
+See the [USAGE](https://github.com/SCHEFR/FORMENU/blob/main/README.md#usage) section below for examples of each feature
 - __Organised__: Your buttons' functions are all in one scope.
 - __Formation__: Call your menus whenever you need with method `form`, with an additional wrapper method `wrap` to loop the formation. **
 - __Enhancements__:
