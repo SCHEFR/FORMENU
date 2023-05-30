@@ -1,5 +1,5 @@
 # FORMENU
-A wrapper/utility to aid with the creation of [GameGuardian](https://gameguardian.net/)'s selection dialog (menus)
+A script/module to aid with the creation of [GameGuardian](https://gameguardian.net/)'s selection dialog (menus)
 # FEATURES
 See the [USAGE](https://github.com/SCHEFR/FORMENU/blob/main/README.md#usage) section below for examples of each feature
 - __Organised__: Your buttons' functions are all in one scope.
@@ -197,10 +197,10 @@ mainMenu = frm:dialog{
 }
 ```
 # INFORMATION
+You're free to include FORMENU in any of your scripts, modify it to fit your needs and free to share it around as a raw file.
 You can open an issue here in `Issues` in case you stumbled upon one.
 If you have any feedback, ideas or anything, you could discuss it in `Discussions`.
 For anything else, even if it is just a question, reach out to me:
 
 Telegram: [@Scheffr](https://t.me/Scheffr)
 Discord: Sch#1613
-
