@@ -200,6 +200,7 @@ mainMenu = frm:dialog{
 You can open an issue here in `Issues` in case you stumbled upon one.
 If you have any feedback, ideas or anything, you could discuss it in `Discussions`.
 For anything else, even if it is just a question, reach out to me:
+
 Telegram: [@Scheffr](https://t.me/Scheffr)
 Discord: Sch#1613
 
