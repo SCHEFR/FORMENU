@@ -1,6 +1,6 @@
 -- FORMENU v0.1.0
 --───── ADDITIONAL FUNCTIONS ─────--
-local function table.titles(functions, parameter)
+function table.titles(functions, parameter)
     parameter = parameter or "title"
     local titles = {}
     for place, funce in ipairs(functions) do
@@ -8,13 +8,13 @@ local function table.titles(functions, parameter)
     end
     return titles
 end
-local function table.merge(this, with)
+function table.merge(this, with)
     for key, value in next, with do
         this[key] = value
     end
     return this
 end
-local function table.map(table, func)
+function table.map(table, func)
     for i, v in next, table do
         table[i] = func(i, v)
     end
