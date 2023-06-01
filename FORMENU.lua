@@ -1,4 +1,4 @@
-return 
+return {
     --───── SELECTION DIALOG TYPES ─────--
     types = {
         choice = function(format, self, message) -- gg.choice
