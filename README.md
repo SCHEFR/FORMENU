@@ -194,7 +194,7 @@ mainMenu = frm:dialog{
    type = 'choice',
    functions = {
       {
-         link = {self = 'otherMenu', 1} --link to the first button in `otherMenu`
+         link = {self = otherMenu, 1} --link to the first button in `otherMenu`
       }
    }
 }
