@@ -1,9 +1,9 @@
-return {
+return 
     --───── SELECTION DIALOG TYPES ─────--
     types = {
         choice = function(format, self, message) -- gg.choice
             message = type(message) == "string" and message or ""
-            local choice = gg.choice(format.titles(self.functions), nil, "#  " .. message)
+            local choice = gg.choice(format.titles(self.functions), nil, (self.default_message or '').."\n#  " .. message)
             return choice and
                 ((self.functions[choice].warn and format.warn(self.functions[choice].warn)) or
                     (self.functions[choice].func and
@@ -111,6 +111,6 @@ return {
         end
     end,
     warn = function(message)
-        return gg.alert(message, "PROCEED", nil, "RETURN")
+        return gg.alert(message, "PROCEED", nil, "RETURN") == 3
     end
 }
