@@ -1,9 +1,14 @@
 # FORMENU
 A script/module to aid with the creation of [GameGuardian](https://gameguardian.net/)'s selection dialog (menus)
+## CHANGELOG v.0.1.1
+ - Added `warn` alerts
+ - Added links
+ - Refactored script
+ - Fixed headers
 # FEATURES
 See the [USAGE](https://github.com/SCHEFR/FORMENU/blob/main/README.md#usage) section below for examples of each feature
 - __Organised__: Your buttons' functions are all in one scope.
-- __Formation__: Call your menus whenever you need with method `form`, with an additional wrapper method `wrap` to loop the formation.
+- __Formation__: Call your menus whenever you need with method `form`, with an additional wrapper method `wrap` to loop the formation. Parameter `returns` will let you specify if you want the dialog to reform itself upon function completion.
 - __Alerts__: Make warning messages before a button's function is executed with `warn`
 - __Enhancements__:
   - Dialog type `doubleChoice`: designed to include two types of buttons inside a menu: one for items and one for functions.
@@ -37,17 +42,19 @@ frm:dialog({
 })
 
 ```
-- `type` specifies the type of the dialog, there are three types of dialogs: `'choice'`, `'multiChoice'`, `'doubleChoice'`
-- `functions` is the list of buttons in the dialog you're creating.
-- `title` decides the title of the button, while `func` will be the function executed when you choose it.
-- `warn` will create a warning (with `PROCEED` and `RETURN` options) alert before the function of the selected button executes.
-- You can set a header message of a dialog with the `default_message` parameter
-- `return_message` will display an additional message when `func` completes.
+- `type` \[string] specifies the type of the dialog, there are three types of dialogs: `'choice'`, `'multiChoice'`, `'doubleChoice'`
+- `functions` \[table] is the list of buttons in the dialog you're creating.
+- `title` \[string] decides the title of the button,  while `func` \[function] will be the function executed when you choose it.
+- `returns` \[bool] specifies if the menu reforms itself upon the completion of `func`
+- `warn` \[string] will create a warning (with `PROCEED` and `RETURN` options) alert before the function of the selected button executes.
+- You can set a header message of a dialog with the `default_message` \[string] parameter
+- `return_message` \[string] will display an additional message when `func` completes.
 ```LUA
 -- A menu with one functional button
 main = frm:dialog{
-    default_message = 'Player-Related Cheats' -- The default header of this dialog
+    default_message = 'Player-Related Cheats', -- The default header of this dialog
     type = 'choice',
+    returns = true,
     functions = {
         { title = 'Set Player Health to 20',
            warn = 'Make sure you don\' t use this function at the PvP arena, you might get reported and caught',
@@ -78,6 +85,7 @@ Rework of the regular `gg.choice` function, basic usage as follows:
 -- Basic `choice` dialog usage example
 frm:dialog{
     type = 'choice',
+    returns = true,
     functions = {
        { title = 'Teleport to Home',
          func = function() teleportTo(64,65,1022) end
@@ -127,7 +135,7 @@ frm:dialog{
 - `doubleChoice` allows you to have have a separate function for the items you list.
 ## ADVANCED
 ### Next inner dialog
-You can create a shortcut to writing inner dialogs of a button using the `next` parameter. For example, if you want to shorten this:
+You can create a shortcut to writing inner dialogs of a button using the `next` \[dialog table] parameter. For example, if you want to shorten this:
 ```LUA
 -- Inner dialogs without the `next` parameter
 frm:dialog{
@@ -165,7 +173,7 @@ frm:dialog{
 ```
 
 ### Creating button shortcuts
-You can create links to buttons (creating a pointer, copying a button) using the `link` parameter. This is usually useful for creating shortcuts for inner functions.
+You can create links to buttons (creating a pointer, copying a button) using the `link` \[number or table] parameter. This is usually useful for creating shortcuts for inner functions.
 ```LUA
 -- Example of creating a shortcut to a button with the `link` parameter
 frm:dialog{
