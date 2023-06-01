@@ -39,6 +39,7 @@ frm:dialog({
 - `type` specifies the type of the dialog, there are three types of dialogs: `'choice'`, `'multiChoice'`, `'doubleChoice'`
 - `functions` is the list of buttons in the dialog you're creating.
 - `title` decides the title of the button, while `func` will be the function executed when you choose it.
+- `warn` will create a warning (with `PROCEED` and `RETURN` options) alert before the function of the selected button executes.
 - You can set a header message of a dialog with the `default_message` parameter
 - `return_message` will display an additional message when `func` completes.
 ```LUA
@@ -48,6 +49,7 @@ main = frm:dialog{
     type = 'choice',
     functions = {
         { title = 'Set Player Health to 20',
+           warn = 'Make sure you don\' t use this function at the PvP arena, you might get reported and caught',
            func = function() --use an anonymous function/any other function pointer
                -- here go the instructions
                player.health = 20
