@@ -3,7 +3,8 @@ A script/module to aid with the creation of [GameGuardian](https://gameguardian.
 # FEATURES
 See the [USAGE](https://github.com/SCHEFR/FORMENU/blob/main/README.md#usage) section below for examples of each feature
 - __Organised__: Your buttons' functions are all in one scope.
-- __Formation__: Call your menus whenever you need with method `form`, with an additional wrapper method `wrap` to loop the formation. **
+- __Formation__: Call your menus whenever you need with method `form`, with an additional wrapper method `wrap` to loop the formation.
+- __Alerts__: Make warning messages before a button's function is executed with `warn`
 - __Enhancements__:
   - Dialog type `doubleChoice`: designed to include two types of buttons inside a menu: one for items and one for functions.
   - Parameter `next`: Used as a shortcut to create inner dialogs. Useful for creating complex menus with multiple levels.
